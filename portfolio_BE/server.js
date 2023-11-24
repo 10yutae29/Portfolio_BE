@@ -13,7 +13,9 @@ const io = socketIo(server, {
 
 const PORT = process.env.PORT || 4000;
 
-server.listen(PORT);
+server.listen(PORT, () => {
+  console.log("server is running");
+});
 
 io.on("connection", (socket) => {
   console.log("소켓 연결됨");
